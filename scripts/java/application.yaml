@@ -1,3 +1,4 @@
+versionInfo: 2.0.0
 ontology:
   directory: ../../owl/ # where to load the ontologies from
   format: rdf_xml # which format to use (optional - if not given, the default format will be used). Possible Values: xml, owl_xml, functional, manchester (the latter is not recommended because GCIs will get lost). Parameter is not case sensitive.

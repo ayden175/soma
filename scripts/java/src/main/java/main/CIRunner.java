@@ -24,6 +24,9 @@ public class CIRunner implements CommandLineRunner {
 	private SubclassNothingRewriter gciRewriter;
 
 	@Autowired
+	private ImportedOntologyAxiomChecker importedOntologyAxiomChecker;
+
+	@Autowired
 	private IRINamespaceChecker iriNamespaceChecker;
 
 	// only use if needed
@@ -32,7 +35,7 @@ public class CIRunner implements CommandLineRunner {
 
 	@Override
 	public void run(final String... args) throws Exception {
-		final CIRunnable[] toRun = {iriNamespaceChecker, gciRewriter, isDefinedInAdder, versionInfoAdder, collapser, ontologySaver};
+		final CIRunnable[] toRun = {importedOntologyAxiomChecker};
 		for (final var next : toRun) {
 			next.run();
 		}
